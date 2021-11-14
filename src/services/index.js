@@ -12,4 +12,5 @@ module.exports = {
   sendMessageWithPrice: require("./sendMessageWithPrice"),
   verifyPrice: require("./verifyPrice"),
   findOrCreateMonitoring: require("./findOrCreateMonitoring"),
+  setupShutdown: require("./setupShutdown"),
 };

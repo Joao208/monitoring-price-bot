@@ -15,6 +15,7 @@ const {
   isEqual,
   savePrice,
   deactiveMonitoring,
+  setupShutdown,
 } = require("./services");
 const {
   continueMonitoring,
@@ -81,3 +82,7 @@ bot.onText(/\/start/, async (msg) => {
 
   findOrCreateMonitoring(msg.chat.id);
 });
+
+process
+  .on("SIGTERM", () => setupShutdown(bot))
+  .on("SIGINT", () => setupShutdown(bot));

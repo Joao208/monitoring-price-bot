@@ -35,7 +35,7 @@ const bot = new TelegramBot(token, { polling: true });
 
 initMongo();
 
-cron.schedule("* * * * *", () => getAllMonitorings(bot));
+cron.schedule("0 * * * *", () => getAllMonitorings(bot));
 
 bot.on("callback_query", async (msg) => {
   const ChatId = msg.from.id;

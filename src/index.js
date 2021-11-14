@@ -23,6 +23,7 @@ const {
   dontForgot,
   imVerify,
   hello,
+  deactiveOldMonitoring,
 } = require("./constants/texts");
 
 logger.useDefaults();
@@ -55,11 +56,15 @@ bot.on("message", async (msg) => {
   if (/\/start/.test(msg.text)) return;
 
   if (!("reply_to_message" in msg)) {
+    const monitoringChat = await findOrCreateMonitoring(msg.chat.id);
+
+    if (monitoringChat?.active) {
+      await bot.sendMessage(msg.chat.id, deactiveOldMonitoring);
+    }
+
     saveProductOrUrl(msg.text, msg.chat.id);
 
     await bot.sendMessage(msg.chat.id, yourInterestValue);
-
-    findOrCreateMonitoring(msg.chat.id);
 
     bot.sendMessage(msg.chat.id, dontForgot);
   }

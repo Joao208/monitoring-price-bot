@@ -12,4 +12,6 @@ module.exports = {
     `Estou de 👀, te aviso assim que chegar a ${formatPrice(text)}`,
   hello:
     "Olá, eu sou o Senhor Preço Baixo, para que eu possa ajuda-lo a monitorar seu produto favorito basta me enviar um link do buscape.com.br de um produto ou o nome de um",
+  deactiveOldMonitoring:
+    "Ainda tinha um monitor ativo seu, desabilitei para ativar esse novo, td bem? Fechado!",
 };

@@ -9,7 +9,7 @@ const saveUrl = async (url, ChatId) => {
 
     await Monitoring.findOneAndUpdate(
       { ChatId },
-      { url, active: true, product: "", InterestPrice: 0 }
+      { url, active: true, product: "", InterestPrice: 0, answered: true }
     );
   } catch (error) {
     errorHandler({ error, params: (url, ChatId), functionName: "saveUrl" });

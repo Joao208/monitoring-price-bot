@@ -9,7 +9,7 @@ const saveProductOrUrl = async (text, ChatId) => {
   } catch {
     await Monitoring.findOneAndUpdate(
       { ChatId },
-      { product: text, active: true, url: "", InterestPrice: 0 }
+      { product: text, active: true, url: "", InterestPrice: 0, answered: true }
     );
   }
 };

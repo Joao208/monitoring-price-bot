@@ -24,7 +24,9 @@ const verifyPrice = async (url, monitoring, bot, isUrl) => {
     for (const { value, url, title } of prices) {
       if (monitoring?.TitlesToIgnore.includes(title)) continue;
 
-      const valueFormated = clearPrice(value, true);
+      const valueFormated = clearPrice(value, !isUrl);
+
+      console.log(valueFormated);
 
       if (valueFormated && valueFormated <= monitoring?.InterestPrice) {
         monitoring.LastTitle = title;

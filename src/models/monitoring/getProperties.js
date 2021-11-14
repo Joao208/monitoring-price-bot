@@ -7,7 +7,7 @@ const getProperties = () => ({
   active: { type: Boolean, default: true },
   TitlesToIgnore: [String],
   LastTitle: String,
-  answered: Boolean,
+  answered: { type: Boolean, default: true },
 });
 
 module.exports = getProperties;
